@@ -4,6 +4,7 @@ using System.Collections.Generic;
 namespace Assets.Enigma.Enigma.Core.Networking.Serialization.SerializationModel
 {
     // it's a struct to reduce the expense of building a wrapper object
+    // and it skips a heap space allocation
     internal struct NetworkWrapper
     {
         public Guid Guid { get; set; }

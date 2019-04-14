@@ -6,7 +6,6 @@ namespace Assets.Enigma.Enigma.Core.Networking
     public abstract class NetworkedComponent : MonoBehaviour
     {
         private NetworkEntity _networkEntity;
-        private bool HasNetworkAuthority { get; } // haven't decided how to do this yet.
 
         public void Start()
         {
@@ -28,6 +27,11 @@ namespace Assets.Enigma.Enigma.Core.Networking
             var obj = this; // have to create a reference value to pass 
             _networkEntity.TryGetUpdates(obj);
         }
-        
+
+        /// <summary>
+        /// Declare a method here for the server builder to declare this as code to run every server tick.
+        /// </summary>
+        public abstract void RunServerSide();
+
     }
 }
